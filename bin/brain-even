@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+use function Hexlet\Code\Even\cli;
+use function Hexlet\Code\Even\logic;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+logic();

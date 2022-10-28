@@ -1,3 +1,8 @@
 #!/usr/bin/env php
 <?php
-echo 'Welcome to the Brain Games!';
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+use function Hexlet\Code\Cli\askForName;
+
+askForName();
