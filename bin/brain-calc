@@ -2,8 +2,8 @@
 <?php
 
 use function Hexlet\Code\Engine\logic;
-use function Hexlet\Code\Even\expressionBuilder;
+use function Hexlet\Code\Calc\expressionBuilder;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-logic('brain-even', ...expressionBuilder());
+logic('brain-calc', ...expressionBuilder());

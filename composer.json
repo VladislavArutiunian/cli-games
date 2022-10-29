@@ -6,7 +6,12 @@
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         },
-        "files": ["src/Cli.php","src/Even.php"]
+        "files": [
+            "src/Games/Cli.php",
+            "src/Games/Even.php",
+            "src/Games/Calculator.php",
+            "src/Engine.php"
+        ]
 
     },
     "require": {
@@ -17,6 +22,7 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ]
 }
