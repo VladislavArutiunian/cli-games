@@ -10,7 +10,7 @@ function expressionBuilder(): array
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
         $sign = array_rand(array_flip(['+', '-', '*']));
-        $expressions[$i] = $digit1 . $sign . $digit2;
+        $expressions[$i] = $digit1 . ' ' . $sign . ' ' . $digit2;
         $correct_answers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
     }
     return [$expressions, $correct_answers];
