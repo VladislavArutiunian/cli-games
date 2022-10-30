@@ -15,7 +15,7 @@ Make sure that the foregoing components are already installed
 After that clone repo to your local repository
 `git clone https://github.com/VladislavArutiunian/php-project-45.git`
 
-Then go to this directory and install composer via
+Then go to local directory and install composer via
 `composer install` or `php composer.phar install`
 
 That's all! Now project can be executed by
@@ -37,7 +37,7 @@ There are 3 steps to complete game successfully.
 
 If there is at least 1 wrong answer received, the game is over :(
 
-### Finally the demonstration
+### Finally, the demonstration
 - **Notice!** The demonstrations are very long, you can navigate through the video yourself
 
 1 brain-even game
