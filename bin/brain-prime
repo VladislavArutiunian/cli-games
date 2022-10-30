@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+use function Hexlet\Code\Engine\logic;
+use function Hexlet\Code\Prime\expressionBuilder;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+logic('brain-prime', ...expressionBuilder());
