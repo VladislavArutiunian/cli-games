@@ -5,12 +5,12 @@ namespace Hexlet\Code\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function logic($game, array $expressions, array $correct_answers): void
+function logic(string $game, array $expressions, array $correct_answers): void
 {
     $steps = 3;
     $user_name = cliHelloAndAskName();
     cliTitle($game);
-    (bool) $user_correct = true;
+    $user_correct = true;
     $i = 0;
     do {
         $expression = $expressions[$i];
@@ -26,7 +26,7 @@ function logic($game, array $expressions, array $correct_answers): void
     cliUnSuccess($user_name);
 }
 
-function cliAnswerChecker($user_answer, $correct_answer): bool
+function cliAnswerChecker(string $user_answer, string $correct_answer): bool
 {
     if ($user_answer !== $correct_answer) {
         line("'{$user_answer}' is wrong answer ;(. Correct answer was '{$correct_answer}'.");
@@ -45,7 +45,7 @@ function cliHelloAndAskName(): string
     return $name;
 }
 
-function cliAskAndGetAnswer($question): string
+function cliAskAndGetAnswer(string $question): string
 {
     $user_answer = prompt("Question: {$question}");
     line("Your answer: {$user_answer}");
@@ -64,13 +64,13 @@ function cliTitle(string $game): void
     line($titles[$game]);
 }
 
-function cliSuccess($name): void
+function cliSuccess(string $name): void
 {
     line("Congratulations, {$name}!");
     exit();
 }
 
-function cliUnSuccess($name): void
+function cliUnSuccess(string $name): void
 {
     line("Let's try again, {$name}!");
     exit();

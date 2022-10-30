@@ -15,11 +15,11 @@ function expressionBuilder(): array
     return [$expressions, $correct_answers];
 }
 
-function expressionCorrectAnswer($digit1, $digit2): string
+function expressionCorrectAnswer(int $digit1, int $digit2): string
 {
     $answer = 1;
     for ($i = 1, $min_digit = min($digit1, $digit2); $i <= $min_digit; $i++) {
-        if ($digit1 % $i === 0 & $digit2 % $i === 0) {
+        if ((bool) $digit1 % $i === 0 & (bool) $digit2 % $i === 0) {
             $answer = $i;
         }
     }

@@ -16,7 +16,7 @@ function expressionBuilder(): array
     return [$expressions, $correct_answers];
 }
 
-function expressionCorrectAnswer($digit1, $digit2, $sign): string
+function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string
 {
     $answer = 0;
     switch ($sign) {
