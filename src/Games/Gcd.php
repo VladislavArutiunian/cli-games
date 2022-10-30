@@ -19,11 +19,11 @@ function expressionCorrectAnswer(int $digit1, int $digit2): string
 {
     $answer = 1;
     for ($i = 1, $min_digit = min($digit1, $digit2); $i <= $min_digit; $i++) {
-        (bool) $exp1 = $digit1 % $i === 0;
-        (bool) $exp2 = $digit2 % $i === 0;
-        if ($exp1 & $exp2) {
+        $exp1 = $digit1 % $i === 0;
+        $exp2 = $digit2 % $i === 0;
+        if ($exp1 && $exp2) {
             $answer = $i;
         }
     }
-    return $answer;
+    return (string) $answer;
 }
