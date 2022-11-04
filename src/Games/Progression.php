@@ -2,16 +2,19 @@
 
 namespace Hexlet\Code\Progression;
 
+use const Hexlet\Code\Engine\STEPS;
+
 function expressionBuilder(): array
 {
+    $title = "What number is missing in the progression?";
     $expressions = [];
     $correct_answers = [];
-    for ($i = 0; $i <= 2; $i++) {
+    for ($i = 0; $i < STEPS; $i++) {
         $result = expressionMake();
         $expressions[$i] = $result[0];
         $correct_answers[$i] = $result[1];
     }
-    return [$expressions, $correct_answers];
+    return [$title, $expressions, $correct_answers];
 }
 
 function expressionMake(): array

@@ -6,4 +6,4 @@ use function Hexlet\Code\Even\expressionBuilder;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-logic('brain-even', ...expressionBuilder());
+logic(...expressionBuilder());

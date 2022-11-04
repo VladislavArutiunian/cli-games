@@ -2,18 +2,21 @@
 
 namespace Hexlet\Code\Calc;
 
+use const Hexlet\Code\Engine\STEPS;
+
 function expressionBuilder(): array
 {
+    $title = "What is the result of the expression?";
     $expressions = [];
     $correct_answers = [];
-    for ($i = 0; $i <= 2; $i++) {
+    for ($i = 0; $i < STEPS; $i++) {
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
         $sign = array_rand(array_flip(['+', '-', '*']));
         $expressions[$i] = $digit1 . ' ' . $sign . ' ' . $digit2;
         $correct_answers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
     }
-    return [$expressions, $correct_answers];
+    return [$title, $expressions, $correct_answers];
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string

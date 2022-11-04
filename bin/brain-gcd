@@ -6,4 +6,4 @@ use function Hexlet\Code\Gcd\expressionBuilder;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-logic('brain-gcd', ...expressionBuilder());
+logic(...expressionBuilder());

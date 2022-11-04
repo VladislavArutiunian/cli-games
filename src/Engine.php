@@ -5,11 +5,12 @@ namespace Hexlet\Code\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function logic(string $game, array $expressions, array $correct_answers): void
+const STEPS = 3;
+
+function logic(string $title, array $expressions, array $correct_answers): void
 {
-    $steps = 3;
     $user_name = cliHelloAndAskName();
-    cliTitle($game);
+    cliTitle($title);
     $user_correct = true;
     $i = 0;
     do {
@@ -18,7 +19,7 @@ function logic(string $game, array $expressions, array $correct_answers): void
         $user_answer = cliAskAndGetAnswer($expression);
         $user_correct = cliAnswerChecker($user_answer, $correct_answer);
         $i++;
-    } while ($user_correct & $i < $steps);
+    } while ($user_correct & $i < STEPS);
 
     if ($user_correct) {
         cliSuccess($user_name);
@@ -31,9 +32,8 @@ function cliAnswerChecker(string $user_answer, string $correct_answer): bool
     if ($user_answer !== $correct_answer) {
         line("'{$user_answer}' is wrong answer ;(. Correct answer was '{$correct_answer}'.");
         return false;
-    } else {
-        line('Correct!');
     }
+    line('Correct!');
     return true;
 }
 
@@ -52,16 +52,9 @@ function cliAskAndGetAnswer(string $question): string
     return $user_answer;
 }
 
-function cliTitle(string $game): void
+function cliTitle(string $title): void
 {
-    $titles = [
-        "brain-even" => "Answer \"yes\" if the number is even, otherwise answer \"no\".",
-        "brain-calc" => "What is the result of the expression?",
-        "brain-gcd" => "Find the greatest common divisor of given numbers.",
-        "brain-progression" => "What number is missing in the progression?",
-        "brain-prime" => "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
-    ];
-    line($titles[$game]);
+    line($title);
 }
 
 function cliSuccess(string $name): void

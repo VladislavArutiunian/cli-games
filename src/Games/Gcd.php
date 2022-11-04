@@ -2,17 +2,20 @@
 
 namespace Hexlet\Code\Gcd;
 
+use const Hexlet\Code\Engine\STEPS;
+
 function expressionBuilder(): array
 {
+    $title = "Find the greatest common divisor of given numbers.";
     $expressions = [];
     $correct_answers = [];
-    for ($i = 0; $i <= 2; $i++) {
+    for ($i = 0; $i < STEPS; $i++) {
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
         $expressions[$i] = $digit1 . " " . $digit2;
         $correct_answers[$i] = expressionCorrectAnswer($digit1, $digit2);
     }
-    return [$expressions, $correct_answers];
+    return [$title, $expressions, $correct_answers];
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2): string
