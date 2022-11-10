@@ -2,6 +2,7 @@
 
 namespace Hexlet\Code\Calc;
 
+use Exception;
 use const Hexlet\Code\Engine\STEPS;
 
 function expressionBuilder(): array
@@ -12,7 +13,7 @@ function expressionBuilder(): array
     for ($i = 0; $i < STEPS; $i++) {
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
-        $sign = array_rand(array_flip(['+', '-', '*']));
+        $sign = array_rand(array_flip(['*', '-', '+']));
         $expressions[$i] = $digit1 . ' ' . $sign . ' ' . $digit2;
         $correct_answers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
     }
@@ -32,6 +33,8 @@ function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string
         case '*':
             $answer = $digit1 * $digit2;
             break;
+        default:
+            throw new Exception("the function receives values other than '*', '-', '+'");
     }
     return $answer;
 }
