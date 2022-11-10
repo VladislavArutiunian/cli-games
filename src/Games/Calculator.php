@@ -3,6 +3,7 @@
 namespace Hexlet\Code\Calc;
 
 use Exception;
+
 use const Hexlet\Code\Engine\STEPS;
 
 function gameBuilder(): array
