@@ -4,7 +4,7 @@ namespace Hexlet\Code\Even;
 
 use const Hexlet\Code\Engine\STEPS;
 
-function expressionBuilder(): array
+function gameBuilder(): array
 {
     $title = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $expressions = [];

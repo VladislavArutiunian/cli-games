@@ -2,8 +2,8 @@
 <?php
 
 use function Hexlet\Code\Engine\logic;
-use function Hexlet\Code\Even\expressionBuilder;
+use function Hexlet\Code\Even\gameBuilder;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-logic(...expressionBuilder());
+logic(...gameBuilder());

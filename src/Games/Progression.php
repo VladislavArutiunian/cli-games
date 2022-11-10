@@ -4,7 +4,7 @@ namespace Hexlet\Code\Progression;
 
 use const Hexlet\Code\Engine\STEPS;
 
-function expressionBuilder(): array
+function gameBuilder(): array
 {
     $title = "What number is missing in the progression?";
     $expressions = [];

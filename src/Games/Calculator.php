@@ -5,7 +5,7 @@ namespace Hexlet\Code\Calc;
 use Exception;
 use const Hexlet\Code\Engine\STEPS;
 
-function expressionBuilder(): array
+function gameBuilder(): array
 {
     $title = "What is the result of the expression?";
     $expressions = [];
