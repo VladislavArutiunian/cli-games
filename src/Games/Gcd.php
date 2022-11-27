@@ -11,7 +11,6 @@ const TITLE = "Find the greatest common divisor of given numbers.";
 function playGcd(): void
 {
     logic(...gameBuilder());
-
 }
 
 function gameBuilder(): array
