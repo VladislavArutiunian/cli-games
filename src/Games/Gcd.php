@@ -2,9 +2,17 @@
 
 namespace Hexlet\Code\Gcd;
 
+use function Hexlet\Code\Engine\logic;
+
 use const Hexlet\Code\Engine\STEPS;
 
 const TITLE = "Find the greatest common divisor of given numbers.";
+
+function playGcd(): void
+{
+    logic(...gameBuilder());
+
+}
 
 function gameBuilder(): array
 {

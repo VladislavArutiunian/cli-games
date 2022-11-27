@@ -1,9 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-use function Hexlet\Code\Engine\logic;
-use function Hexlet\Code\Even\gameBuilder;
+use function Hexlet\Code\Even\playEven;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-logic(...gameBuilder());
+playEven();

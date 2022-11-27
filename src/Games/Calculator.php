@@ -4,9 +4,16 @@ namespace Hexlet\Code\Calc;
 
 use Exception;
 
+use function Hexlet\Code\Engine\logic;
+
 use const Hexlet\Code\Engine\STEPS;
 
 const TITLE = "What is the result of the expression?";
+
+function playCalc(): void
+{
+    logic(...gameBuilder());
+}
 
 function gameBuilder(): array
 {

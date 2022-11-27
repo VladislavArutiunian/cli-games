@@ -2,9 +2,16 @@
 
 namespace Hexlet\Code\Progression;
 
+use function Hexlet\Code\Engine\logic;
+
 use const Hexlet\Code\Engine\STEPS;
 
 const TITLE = "What number is missing in the progression?";
+
+function playProgression(): void
+{
+    logic(...gameBuilder());
+}
 
 function gameBuilder(): array
 {
