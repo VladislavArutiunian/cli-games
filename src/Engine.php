@@ -7,30 +7,30 @@ use function cli\prompt;
 
 const STEPS = 3;
 
-function logic(string $title, array $expressions, array $correct_answers): void
+function logic(string $title, array $expressions, array $correctAnswers): void
 {
     $user_name = cliHelloAndAskName();
     cliTitle($title);
-    $user_correct = true;
+    $userCorrect = true;
     $i = 0;
     do {
         $expression = $expressions[$i];
-        $correct_answer = $correct_answers[$i];
-        $user_answer = cliAskAndGetAnswer($expression);
-        $user_correct = cliAnswerChecker($user_answer, $correct_answer);
+        $correctAnswer = $correctAnswers[$i];
+        $userAnswer = cliAskAndGetAnswer($expression);
+        $userCorrect = cliAnswerChecker($userAnswer, $correctAnswer);
         $i++;
-    } while ($user_correct & $i < STEPS);
+    } while ($userCorrect & $i < STEPS);
 
-    if ($user_correct) {
+    if ($userCorrect) {
         cliSuccess($user_name);
     }
     cliUnSuccess($user_name);
 }
 
-function cliAnswerChecker(string $user_answer, string $correct_answer): bool
+function cliAnswerChecker(string $userAnswer, string $correctAnswer): bool
 {
-    if ($user_answer !== $correct_answer) {
-        line("'{$user_answer}' is wrong answer ;(. Correct answer was '{$correct_answer}'.");
+    if ($userAnswer !== $correctAnswer) {
+        line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
         return false;
     }
     line('Correct!');
@@ -47,9 +47,9 @@ function cliHelloAndAskName(): string
 
 function cliAskAndGetAnswer(string $question): string
 {
-    $user_answer = prompt("Question: {$question}");
-    line("Your answer: {$user_answer}");
-    return $user_answer;
+    $userAnswer = prompt("Question: {$question}");
+    line("Your answer: {$userAnswer}");
+    return $userAnswer;
 }
 
 function cliTitle(string $title): void

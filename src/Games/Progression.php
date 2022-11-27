@@ -8,30 +8,30 @@ function gameBuilder(): array
 {
     $title = "What number is missing in the progression?";
     $expressions = [];
-    $correct_answers = [];
+    $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
         $result = expressionMake();
         $expressions[$i] = $result[0];
-        $correct_answers[$i] = $result[1];
+        $correctAnswers[$i] = $result[1];
     }
-    return [$title, $expressions, $correct_answers];
+    return [$title, $expressions, $correctAnswers];
 }
 
 function expressionMake(): array
 {
     $expression = [];
-    $correct_answer = '';
-    $progression_length = rand(5, 10);
-    $hide_position = rand(0, $progression_length - 1);
-    $progression_step = rand(1, 49);
-    for ($i = 0; $i < $progression_length; $i++) {
+    $correctAnswer = '';
+    $progressionLength = rand(5, 10);
+    $hidePosition = rand(0, $progressionLength - 1);
+    $progressionStep = rand(1, 49);
+    for ($i = 0; $i < $progressionLength; $i++) {
         if ($i === 0) {
             $expression[$i] = rand(1, 49);
             continue;
         }
-        $expression[$i] = $expression[$i - 1] + $progression_step;
+        $expression[$i] = $expression[$i - 1] + $progressionStep;
     }
-    $correct_answer = (string) $expression[$hide_position];
-    $expression[$hide_position] = '..';
-    return [implode(' ', $expression), $correct_answer];
+    $correctAnswer = (string) $expression[$hidePosition];
+    $expression[$hidePosition] = '..';
+    return [implode(' ', $expression), $correctAnswer];
 }
