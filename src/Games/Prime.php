@@ -4,9 +4,10 @@ namespace Hexlet\Code\Prime;
 
 use const Hexlet\Code\Engine\STEPS;
 
+const TITLE = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+
 function gameBuilder(): array
 {
-    $title = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
     $expressions = [];
     $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
@@ -14,7 +15,7 @@ function gameBuilder(): array
         $expressions[$i] = $result[0];
         $correctAnswers[$i] = $result[1];
     }
-    return [$title, $expressions, $correctAnswers];
+    return [TITLE, $expressions, $correctAnswers];
 }
 
 function expressionMake(): array

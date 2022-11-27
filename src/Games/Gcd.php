@@ -4,9 +4,10 @@ namespace Hexlet\Code\Gcd;
 
 use const Hexlet\Code\Engine\STEPS;
 
+const TITLE = "Find the greatest common divisor of given numbers.";
+
 function gameBuilder(): array
 {
-    $title = "Find the greatest common divisor of given numbers.";
     $expressions = [];
     $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
@@ -15,7 +16,7 @@ function gameBuilder(): array
         $expressions[$i] = $digit1 . " " . $digit2;
         $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2);
     }
-    return [$title, $expressions, $correctAnswers];
+    return [TITLE, $expressions, $correctAnswers];
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2): string

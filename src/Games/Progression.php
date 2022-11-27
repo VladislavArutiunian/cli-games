@@ -4,9 +4,10 @@ namespace Hexlet\Code\Progression;
 
 use const Hexlet\Code\Engine\STEPS;
 
+const TITLE = "What number is missing in the progression?";
+
 function gameBuilder(): array
 {
-    $title = "What number is missing in the progression?";
     $expressions = [];
     $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
@@ -14,7 +15,7 @@ function gameBuilder(): array
         $expressions[$i] = $result[0];
         $correctAnswers[$i] = $result[1];
     }
-    return [$title, $expressions, $correctAnswers];
+    return [TITLE, $expressions, $correctAnswers];
 }
 
 function expressionMake(): array

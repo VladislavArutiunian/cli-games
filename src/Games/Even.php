@@ -4,9 +4,10 @@ namespace Hexlet\Code\Even;
 
 use const Hexlet\Code\Engine\STEPS;
 
+const TITLE = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+
 function gameBuilder(): array
 {
-    $title = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $expressions = [];
     $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
@@ -14,5 +15,5 @@ function gameBuilder(): array
         $expressions[$i] = $digit;
         $correctAnswers[$i] = $digit % 2 === 0 ? 'yes' : 'no';
     }
-    return [$title, $expressions, $correctAnswers];
+    return [TITLE, $expressions, $correctAnswers];
 }

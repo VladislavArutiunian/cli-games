@@ -6,9 +6,10 @@ use Exception;
 
 use const Hexlet\Code\Engine\STEPS;
 
+const TITLE = "What is the result of the expression?";
+
 function gameBuilder(): array
 {
-    $title = "What is the result of the expression?";
     $expressions = [];
     $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
@@ -18,7 +19,7 @@ function gameBuilder(): array
         $expressions[$i] = $digit1 . ' ' . $sign . ' ' . $digit2;
         $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
     }
-    return [$title, $expressions, $correctAnswers];
+    return [TITLE, $expressions, $correctAnswers];
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string
