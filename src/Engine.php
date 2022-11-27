@@ -9,7 +9,7 @@ const STEPS = 3;
 
 function logic(string $title, array $expressions, array $correctAnswers): void
 {
-    $user_name = cliHelloAndAskName();
+    $userName = cliHelloAndAskName();
     cliTitle($title);
     $userCorrect = true;
     $i = 0;
@@ -22,9 +22,10 @@ function logic(string $title, array $expressions, array $correctAnswers): void
     } while ($userCorrect & $i < STEPS);
 
     if ($userCorrect) {
-        cliSuccess($user_name);
+        cliSuccess($userName);
+    } else {
+        cliUnSuccess($userName);
     }
-    cliUnSuccess($user_name);
 }
 
 function cliAnswerChecker(string $userAnswer, string $correctAnswer): bool
@@ -60,11 +61,9 @@ function cliTitle(string $title): void
 function cliSuccess(string $name): void
 {
     line("Congratulations, {$name}!");
-    exit();
 }
 
 function cliUnSuccess(string $name): void
 {
     line("Let's try again, {$name}!");
-    exit();
 }
