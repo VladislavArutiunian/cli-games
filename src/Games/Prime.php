@@ -6,7 +6,7 @@ use function Hexlet\Code\Engine\logic;
 
 use const Hexlet\Code\Engine\STEPS;
 
-const TITLE = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+const TITLE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function playPrime(): void
 {

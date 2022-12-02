@@ -20,7 +20,7 @@ function gameBuilder(): array
     for ($i = 0; $i < STEPS; $i++) {
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
-        $expressions[$i] = $digit1 . " " . $digit2;
+        $expressions[$i] = "{$digit1} {$digit2}";
         $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2);
     }
     return [TITLE, $expressions, $correctAnswers];

@@ -23,7 +23,7 @@ function gameBuilder(): array
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
         $sign = array_rand(array_flip(['*', '-', '+']));
-        $expressions[$i] = $digit1 . ' ' . $sign . ' ' . $digit2;
+        $expressions[$i] = "{$digit1} {$sign} {$digit2}";
         $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
     }
     return [TITLE, $expressions, $correctAnswers];
@@ -31,19 +31,14 @@ function gameBuilder(): array
 
 function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string
 {
-    $answer = 0;
     switch ($sign) {
         case '+':
-            $answer = $digit1 + $digit2;
-            break;
+            return $digit1 + $digit2;
         case '-':
-            $answer = $digit1 - $digit2;
-            break;
+            return $digit1 - $digit2;
         case '*':
-            $answer = $digit1 * $digit2;
-            break;
+            return $digit1 * $digit2;
         default:
-            throw new Exception("the function receives values other than '*', '-', '+'");
+            throw new Exception("Неизвестный оператор '{$sign}'");
     }
-    return $answer;
 }

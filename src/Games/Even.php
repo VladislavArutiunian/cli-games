@@ -6,7 +6,7 @@ use function Hexlet\Code\Engine\logic;
 
 use const Hexlet\Code\Engine\STEPS;
 
-const TITLE = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+const TITLE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function playEven(): void
 {
