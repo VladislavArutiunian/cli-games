@@ -4,18 +4,13 @@ namespace Hexlet\Code\Calc;
 
 use Exception;
 
-use function Hexlet\Code\Engine\logic;
+use function Hexlet\Code\Engine\engine;
 
 use const Hexlet\Code\Engine\STEPS;
 
 const TITLE = "What is the result of the expression?";
 
 function playCalc(): void
-{
-    logic(...gameBuilder());
-}
-
-function gameBuilder(): array
 {
     $expressions = [];
     $correctAnswers = [];
@@ -26,7 +21,7 @@ function gameBuilder(): array
         $expressions[$i] = "{$digit1} {$sign} {$digit2}";
         $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
     }
-    return [TITLE, $expressions, $correctAnswers];
+    engine(TITLE, $expressions, $correctAnswers);
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string

@@ -2,18 +2,13 @@
 
 namespace Hexlet\Code\Gcd;
 
-use function Hexlet\Code\Engine\logic;
+use function Hexlet\Code\Engine\engine;
 
 use const Hexlet\Code\Engine\STEPS;
 
 const TITLE = "Find the greatest common divisor of given numbers.";
 
 function playGcd(): void
-{
-    logic(...gameBuilder());
-}
-
-function gameBuilder(): array
 {
     $expressions = [];
     $correctAnswers = [];
@@ -23,7 +18,7 @@ function gameBuilder(): array
         $expressions[$i] = "{$digit1} {$digit2}";
         $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2);
     }
-    return [TITLE, $expressions, $correctAnswers];
+    engine(TITLE, $expressions, $correctAnswers);
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2): string

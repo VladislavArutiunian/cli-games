@@ -2,7 +2,7 @@
 
 namespace Hexlet\Code\Prime;
 
-use function Hexlet\Code\Engine\logic;
+use function Hexlet\Code\Engine\engine;
 
 use const Hexlet\Code\Engine\STEPS;
 
@@ -10,22 +10,17 @@ const TITLE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function playPrime(): void
 {
-    logic(...gameBuilder());
-}
-
-function gameBuilder(): array
-{
     $expressions = [];
     $correctAnswers = [];
     for ($i = 0; $i < STEPS; $i++) {
-        $result = expressionMake();
+        $result = makeExpression();
         $expressions[$i] = $result[0];
         $correctAnswers[$i] = $result[1];
     }
-    return [TITLE, $expressions, $correctAnswers];
+    engine(TITLE, $expressions, $correctAnswers);
 }
 
-function expressionMake(): array
+function makeExpression(): array
 {
     $digit = rand(1, 200);
 

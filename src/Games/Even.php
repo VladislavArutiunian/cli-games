@@ -2,18 +2,13 @@
 
 namespace Hexlet\Code\Even;
 
-use function Hexlet\Code\Engine\logic;
+use function Hexlet\Code\Engine\engine;
 
 use const Hexlet\Code\Engine\STEPS;
 
 const TITLE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function playEven(): void
-{
-    logic(...gameBuilder());
-}
-
-function gameBuilder(): array
 {
     $expressions = [];
     $correctAnswers = [];
@@ -22,5 +17,5 @@ function gameBuilder(): array
         $expressions[$i] = $digit;
         $correctAnswers[$i] = $digit % 2 === 0 ? 'yes' : 'no';
     }
-    return [TITLE, $expressions, $correctAnswers];
+    engine(TITLE, $expressions, $correctAnswers);
 }
