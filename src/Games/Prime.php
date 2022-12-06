@@ -23,7 +23,6 @@ function playPrime(): void
 function makeExpression(): array
 {
     $digit = rand(1, 200);
-
     $correctAnswer = 'yes';
     for ($i = 2; $i < $digit; $i++) {
         if ($digit % $i === 0) {
@@ -31,5 +30,6 @@ function makeExpression(): array
             break;
         }
     }
+    $correctAnswer = $digit === 1 ? 'no' : $correctAnswer;
     return [$digit, $correctAnswer];
 }
