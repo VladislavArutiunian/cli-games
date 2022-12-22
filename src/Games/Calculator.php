@@ -19,7 +19,7 @@ function playCalc(): void
         $digit2 = rand(1, 99);
         $sign = array_rand(array_flip(['*', '-', '+']));
         $pair['question'] = "{$digit1} {$sign} {$digit2}";
-        $sign['correctAnswer'] = expressionCorrectAnswer($digit1, $digit2, $sign);
+        $pair['correctAnswer'] = expressionCorrectAnswer($digit1, $digit2, $sign);
         $pairs[] = $pair;
     }
     engine(TITLE, $pairs);
