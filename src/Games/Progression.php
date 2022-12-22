@@ -10,14 +10,15 @@ const TITLE = "What number is missing in the progression?";
 
 function playProgression(): void
 {
-    $expressions = [];
-    $correctAnswers = [];
+    $pairs = [];
     for ($i = 0; $i < STEPS; $i++) {
-        $result = makeExpression();
-        $expressions[$i] = $result[0];
-        $correctAnswers[$i] = $result[1];
+        $pair = [];
+        [$question, $correctAnswer] = makeExpression();
+        $pair['question'] = $question;
+        $pair['correctAnswer'] = $correctAnswer;
+        $pairs[] = $pair;
     }
-    engine(TITLE, $expressions, $correctAnswers);
+    engine(TITLE, $pairs);
 }
 
 function makeExpression(): array

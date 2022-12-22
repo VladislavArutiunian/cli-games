@@ -10,12 +10,13 @@ const TITLE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function playEven(): void
 {
-    $expressions = [];
-    $correctAnswers = [];
+    $pairs = [];
     for ($i = 0; $i < STEPS; $i++) {
+        $pair = [];
         $digit = rand(1, 99);
-        $expressions[$i] = $digit;
-        $correctAnswers[$i] = $digit % 2 === 0 ? 'yes' : 'no';
+        $pair['question'] = $digit;
+        $pair['correctAnswer'] = $digit % 2 === 0 ? 'yes' : 'no';
+        $pairs[] = $pair;
     }
-    engine(TITLE, $expressions, $correctAnswers);
+    engine(TITLE, $pairs);
 }

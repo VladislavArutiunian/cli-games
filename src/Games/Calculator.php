@@ -12,16 +12,17 @@ const TITLE = "What is the result of the expression?";
 
 function playCalc(): void
 {
-    $expressions = [];
-    $correctAnswers = [];
+    $pairs = [];
     for ($i = 0; $i < STEPS; $i++) {
+        $pair = [];
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
         $sign = array_rand(array_flip(['*', '-', '+']));
-        $expressions[$i] = "{$digit1} {$sign} {$digit2}";
-        $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2, $sign);
+        $pair['question'] = "{$digit1} {$sign} {$digit2}";
+        $sign['correctAnswer'] = expressionCorrectAnswer($digit1, $digit2, $sign);
+        $pairs[] = $pair;
     }
-    engine(TITLE, $expressions, $correctAnswers);
+    engine(TITLE, $pairs);
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2, string $sign): string

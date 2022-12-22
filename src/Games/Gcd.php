@@ -10,15 +10,16 @@ const TITLE = "Find the greatest common divisor of given numbers.";
 
 function playGcd(): void
 {
-    $expressions = [];
-    $correctAnswers = [];
+    $pairs = [];
     for ($i = 0; $i < STEPS; $i++) {
+        $pair = [];
         $digit1 = rand(1, 99);
         $digit2 = rand(1, 99);
-        $expressions[$i] = "{$digit1} {$digit2}";
-        $correctAnswers[$i] = expressionCorrectAnswer($digit1, $digit2);
+        $pair['question'] = "{$digit1} {$digit2}";
+        $pair['correctAnswer'] = expressionCorrectAnswer($digit1, $digit2);
+        $pairs[] = $pair;
     }
-    engine(TITLE, $expressions, $correctAnswers);
+    engine(TITLE, $pairs);
 }
 
 function expressionCorrectAnswer(int $digit1, int $digit2): string

@@ -7,15 +7,14 @@ use function cli\prompt;
 
 const STEPS = 3;
 
-function engine(string $title, array $questions, array $correctAnswers): bool
+function engine(string $title, array $pairs): bool
 {
     line('Welcome to the Brain Game!');
     $userName = prompt('May I have your name?');
     line("Hello, {$userName}!");
     line($title);
 
-    $pairs = array_combine($questions, $correctAnswers);
-    foreach ($pairs as $question => $correctAnswer) {
+    foreach ($pairs as ['question' => $question, 'correctAnswer' => $correctAnswer]) {
         $userAnswer = prompt("Question: {$question}");
         line("Your answer: {$userAnswer}");
         if ($userAnswer !== $correctAnswer) {
@@ -25,6 +24,7 @@ function engine(string $title, array $questions, array $correctAnswers): bool
         }
         line('Correct!');
     }
+
     line("Congratulations, {$userName}!");
     return true;
 }
