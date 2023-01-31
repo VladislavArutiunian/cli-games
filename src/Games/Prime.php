@@ -1,36 +1,35 @@
 <?php
 
-namespace Hexlet\Code\Prime;
+namespace Hexlet\Code\Games\Prime;
 
-use function Hexlet\Code\Engine\engine;
+use function Hexlet\Code\Engine\startGame;
 
 use const Hexlet\Code\Engine\STEPS;
 
-const TITLE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function playPrime(): void
 {
-    $pairs = [];
+    $quizzes = [];
     for ($i = 0; $i < STEPS; $i++) {
-        $pair = [];
-        [$question, $correctAnswer] = makeExpression();
-        $pair['question'] = $question;
-        $pair['correctAnswer'] = $correctAnswer;
-        $pairs[] = $pair;
+        $quiz = [];
+        $figure = rand(1, 200);
+        $correctAnswer = getCorrectAnswer($figure);
+        $quiz['question'] = $figure;
+        $quiz['correctAnswer'] = $correctAnswer;
+        $quizzes[] = $quiz;
     }
-    engine(TITLE, $pairs);
+    startGame(TASK, $quizzes);
 }
 
-function makeExpression(): array
+function getCorrectAnswer(int $figure): string
 {
-    $digit = rand(1, 200);
     $correctAnswer = 'yes';
-    for ($i = 2; $i < $digit; $i++) {
-        if ($digit % $i === 0) {
+    for ($i = 2; $i < $figure; $i++) {
+        if ($figure % $i === 0) {
             $correctAnswer = 'no';
             break;
         }
     }
-    $correctAnswer = $digit === 1 ? 'no' : $correctAnswer;
-    return [$digit, $correctAnswer];
+    return $figure === 1 ? 'no' : $correctAnswer;
 }

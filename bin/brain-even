@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function Hexlet\Code\Even\playEven;
+use function Hexlet\Code\Games\Even\playEven;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 

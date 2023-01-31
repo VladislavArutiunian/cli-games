@@ -1,36 +1,34 @@
 <?php
 
-namespace Hexlet\Code\Gcd;
+namespace Hexlet\Code\Games\Gcd;
 
-use function Hexlet\Code\Engine\engine;
+use function Hexlet\Code\Engine\startGame;
 
 use const Hexlet\Code\Engine\STEPS;
 
-const TITLE = "Find the greatest common divisor of given numbers.";
+const TASK = "Find the greatest common divisor of given numbers.";
 
 function playGcd(): void
 {
-    $pairs = [];
+    $quizzes = [];
     for ($i = 0; $i < STEPS; $i++) {
-        $pair = [];
-        $digit1 = rand(1, 99);
-        $digit2 = rand(1, 99);
-        $pair['question'] = "{$digit1} {$digit2}";
-        $pair['correctAnswer'] = expressionCorrectAnswer($digit1, $digit2);
-        $pairs[] = $pair;
+        $quiz = [];
+        $figure1 = rand(1, 99);
+        $figure2 = rand(1, 99);
+        $quiz['question'] = "{$figure1} {$figure2}";
+        $quiz['correctAnswer'] = sprintf('%s', getCorrectAnswer($figure1, $figure2));
+        $quizzes[] = $quiz;
     }
-    engine(TITLE, $pairs);
+    startGame(TASK, $quizzes);
 }
 
-function expressionCorrectAnswer(int $digit1, int $digit2): string
+function getCorrectAnswer(int $figure1, int $figure2): int
 {
     $answer = 1;
-    for ($i = 1, $minDigit = min($digit1, $digit2); $i <= $minDigit; $i++) {
-        $exp1 = $digit1 % $i === 0;
-        $exp2 = $digit2 % $i === 0;
-        if ($exp1 && $exp2) {
+    for ($i = 1, $minDigit = min($figure1, $figure2); $i <= $minDigit; $i++) {
+        if ($figure1 % $i === 0 && $figure2 % $i === 0) {
             $answer = $i;
         }
     }
-    return (string) $answer;
+    return $answer;
 }

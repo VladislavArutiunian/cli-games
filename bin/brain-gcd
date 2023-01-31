@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function Hexlet\Code\Gcd\playGcd;
+use function Hexlet\Code\Games\Gcd\playGcd;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 

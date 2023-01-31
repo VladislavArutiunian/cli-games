@@ -1,22 +1,22 @@
 <?php
 
-namespace Hexlet\Code\Even;
+namespace Hexlet\Code\Games\Even;
 
-use function Hexlet\Code\Engine\engine;
+use function Hexlet\Code\Engine\startGame;
 
 use const Hexlet\Code\Engine\STEPS;
 
-const TITLE = 'Answer "yes" if the number is even, otherwise answer "no".';
+const TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function playEven(): void
 {
-    $pairs = [];
+    $quizzes = [];
     for ($i = 0; $i < STEPS; $i++) {
-        $pair = [];
-        $digit = rand(1, 99);
-        $pair['question'] = $digit;
-        $pair['correctAnswer'] = $digit % 2 === 0 ? 'yes' : 'no';
-        $pairs[] = $pair;
+        $quiz = [];
+        $figure = rand(1, 99);
+        $quiz['question'] = $figure;
+        $quiz['correctAnswer'] = $figure % 2 === 0 ? 'yes' : 'no';
+        $quizzes[] = $quiz;
     }
-    engine(TITLE, $pairs);
+    startGame(TASK, $quizzes);
 }

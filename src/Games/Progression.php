@@ -1,27 +1,27 @@
 <?php
 
-namespace Hexlet\Code\Progression;
+namespace Hexlet\Code\Games\Progression;
 
-use function Hexlet\Code\Engine\engine;
+use function Hexlet\Code\Engine\startGame;
 
 use const Hexlet\Code\Engine\STEPS;
 
-const TITLE = "What number is missing in the progression?";
+const TASK = "What number is missing in the progression?";
 
 function playProgression(): void
 {
-    $pairs = [];
+    $quizzes = [];
     for ($i = 0; $i < STEPS; $i++) {
-        $pair = [];
-        [$question, $correctAnswer] = makeExpression();
-        $pair['question'] = $question;
-        $pair['correctAnswer'] = $correctAnswer;
-        $pairs[] = $pair;
+        $quiz = [];
+        [$question, $correctAnswer] = makeProgression();
+        $quiz['question'] = $question;
+        $quiz['correctAnswer'] = $correctAnswer;
+        $quizzes[] = $quiz;
     }
-    engine(TITLE, $pairs);
+    startGame(TASK, $quizzes);
 }
 
-function makeExpression(): array
+function makeProgression(): array
 {
     $expression = [];
     $correctAnswer = '';
@@ -33,7 +33,8 @@ function makeExpression(): array
             $expression[$i] = rand(1, 49);
             continue;
         }
-        $expression[$i] = $expression[$i - 1] + $progressionStep;
+        $begin = $expression[0];
+        $expression[$i] = $begin + ($i * $progressionStep);
     }
     $correctAnswer = (string) $expression[$hidePosition];
     $expression[$hidePosition] = '..';

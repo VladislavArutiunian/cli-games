@@ -3,6 +3,6 @@
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-use function Hexlet\Code\Cli\askForName;
+use function Hexlet\Code\Games\Cli\askForName;
 
 askForName();
